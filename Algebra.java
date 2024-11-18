@@ -47,9 +47,7 @@ public class Algebra {
 	public static int times(int x1, int x2) {
         int total = 0;
 		while (x2 != 0) {
-			for (int i = 0; i < x1; i++) {
-				total++;
-			}
+			total = plus(total, x1);
 			x2--;
 		}
 		return total;
@@ -69,9 +67,7 @@ public class Algebra {
 	public static int div(int x1, int x2) {
 		int count = 0;
 		while (x1 >= x2) {
-			for (int i = 0; i < x2; i++) {
-				x1--;
-			}
+			x1 = minus(x1, x2);
 			count++;
 		}
 		return count;
@@ -80,9 +76,7 @@ public class Algebra {
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
 		while (x1 >= x2) {
-			for (int i = 0; i < x2; i++) {
-				x1--;
-			}
+			x1 = minus(x1, x2);
 		}
 		return x1;
 	}	
