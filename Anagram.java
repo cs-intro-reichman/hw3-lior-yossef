@@ -1,4 +1,3 @@
-
 /** Functions for checking if a given string is an anagram. */
 public class Anagram {
 	public static void main(String args[]) {
@@ -15,7 +14,7 @@ public class Anagram {
 		System.out.println("silent and " + randomAnagram("silent") + " are anagrams.");
 		
 		// Performs a stress test of randomAnagram 
-		String str = "1234567";
+		String str = "William Shakespeare";
 		Boolean pass = true;
 		//// 10 can be changed to much larger values, like 1000
 		for (int i = 0; i < 10; i++) {
@@ -29,8 +28,24 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		// Replace the following statement with your code
-		return false;
+		str1 = preProcess(str1);
+		str2 = preProcess(str2);
+
+		for (int i = 0; i < str1.length(); i++) {
+			boolean isLetterFound = false;
+			for (int j = 0; j < str2.length(); j++) {
+				if (str1.charAt(i) == str2.charAt(j)) {
+					isLetterFound = true;
+					str2 = str2.substring(0, j) + str2.substring(j + 1);
+					break;
+				}
+			}
+			if (!isLetterFound) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 	   
 	// Returns a preprocessed version of the given string: all the letter characters are converted
@@ -38,23 +53,33 @@ public class Anagram {
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	private static String preProcess(String str) {
 		String newStr = "";
+
 		for (int i = 0; i < str.length(); i++) {
 			char letter = str.charAt(i);
 			int asciiCode = (int) letter;
 			if (asciiCode >= 65 && asciiCode <= 90) {
 				asciiCode += 32;
 				newStr += (char) asciiCode;
-			} else if (asciiCode >= 97 && asciiCode <= 122) {
+			} else if (asciiCode == 32 || (asciiCode >= 97 && asciiCode <= 122)) {
 				newStr += (char) asciiCode;
 			}
 		}
+
 		return newStr;
 	} 
 	   
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
-		// Replace the following statement with your code
-		return str;
+		str = preProcess(str);
+		String newStr = "";
+		
+		while (str.length() > 0) {
+			int randomIndex = (int) (str.length() * Math.random());
+			newStr += str.charAt(randomIndex);
+			str = str.substring(0, randomIndex) + str.substring(randomIndex + 1);
+		}
+
+		return newStr;
 	}
 }
