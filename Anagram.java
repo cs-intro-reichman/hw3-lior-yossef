@@ -31,17 +31,18 @@ public class Anagram {
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
 
+		if (str1.length() != str2.length()) {
+			return false;
+		}
+
 		for (int i = 0; i < str1.length(); i++) {
-			boolean isLetterFound = false;
-			for (int j = 0; j < str2.length(); j++) {
-				if (str1.charAt(i) == str2.charAt(j)) {
-					isLetterFound = true;
-					str2 = str2.substring(0, j) + str2.substring(j + 1);
-					break;
-				}
-			}
-			if (!isLetterFound) {
+			char letter = str1.charAt(i);
+			int charIndex = str2.indexOf(letter);
+
+			if (charIndex == -1) {
 				return false;
+			} else {
+				str2 = str2.substring(0, charIndex) + str2.substring(charIndex + 1);
 			}
 		}
 
@@ -56,12 +57,11 @@ public class Anagram {
 
 		for (int i = 0; i < str.length(); i++) {
 			char letter = str.charAt(i);
-			int asciiCode = (int) letter;
-			if (asciiCode >= 65 && asciiCode <= 90) {
-				asciiCode += 32;
-				newStr += (char) asciiCode;
-			} else if (asciiCode == 32 || (asciiCode >= 97 && asciiCode <= 122)) {
-				newStr += (char) asciiCode;
+			if (letter >= 'A' && letter <= 'Z') {
+				letter += 32;
+				newStr += letter;
+			} else if (letter >= 'a' && letter <= 'z') {
+				newStr += letter;
 			}
 		}
 
