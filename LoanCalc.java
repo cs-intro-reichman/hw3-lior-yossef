@@ -44,7 +44,7 @@ public class LoanCalc {
 	public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
 		iterationCounter = 0;
 		double payment = loan / n;
-		double increment = 0.001;
+		double increment = 0.0001;
 		
 		while (Math.abs(endBalance(loan, rate, n, payment)) > epsilon) {
 			payment += increment;
