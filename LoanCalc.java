@@ -43,15 +43,14 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
 	public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
 		iterationCounter = 0;
-		double payment = loan / n;
-		double increment = 0.0001;
-		
-		while (Math.abs(endBalance(loan, rate, n, payment)) > epsilon) {
-			payment += increment;
+		double g = loan / n;
+
+		while (endBalance(loan, rate, n, g) > 0) {
+			g += epsilon;
 			iterationCounter++;
 		}
 
-		return payment;
+		return g;
 	}
     
     // Uses bisection search to compute an approximation of the periodical payment 
