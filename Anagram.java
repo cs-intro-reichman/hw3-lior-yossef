@@ -60,7 +60,7 @@ public class Anagram {
 			if (letter >= 'A' && letter <= 'Z') {
 				letter += 32;
 				newStr += letter;
-			} else if (letter >= 'a' && letter <= 'z') {
+			} else if (letter == ' ' || (letter >= 'a' && letter <= 'z')) {
 				newStr += letter;
 			}
 		}
