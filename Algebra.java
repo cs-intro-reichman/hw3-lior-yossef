@@ -35,13 +35,12 @@ public class Algebra {
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// int difference = x1;
-		// while (x2 != 0) {
-		// 	difference--;
-		// 	x2--;
-		// }
-		// return difference;
-		return 0;
+		int difference = x1;
+		while (x2 != 0) {
+			difference--;
+			x2--;
+		}
+		return difference;
 	}
 
 	// Returns x1 * x2
