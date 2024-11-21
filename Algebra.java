@@ -75,11 +75,10 @@ public class Algebra {
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		// while (x1 >= x2) {
-		// 	x1 = minus(x1, x2);
-		// }
-		// return x1;
-		return 0;
+		while (x1 >= x2) {
+			x1 = minus(x1, x2);
+		}
+		return x1;
 	}	
 
 	// Returns the integer part of sqrt(x) 
