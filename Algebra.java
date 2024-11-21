@@ -55,13 +55,12 @@ public class Algebra {
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// int total = 1;
-		// while (n != 0) {
-		// 	total = times(total, x);
-		// 	n--;
-		// }
-		// return total;
-		return 0;
+		int total = 1;
+		while (n != 0) {
+			total = times(total, x);
+			n--;
+		}
+		return total;
 	}
 
 	// Returns the integer part of x1 / x2 
