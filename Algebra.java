@@ -25,68 +25,75 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		int sum = x1;
-		while (x2 != 0) {
-			sum++;
-			x2--;
-		}
-		return sum;
+		// int sum = x1;
+		// while (x2 != 0) {
+		// 	sum++;
+		// 	x2--;
+		// }
+		// return sum;
+		return 0;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		int difference = x1;
-		while (x2 != 0) {
-			difference--;
-			x2--;
-		}
-		return difference;
+		// int difference = x1;
+		// while (x2 != 0) {
+		// 	difference--;
+		// 	x2--;
+		// }
+		// return difference;
+		return 0;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-        int total = 0;
-		while (x2 != 0) {
-			total = plus(total, x1);
-			x2--;
-		}
-		return total;
+        // int total = 0;
+		// while (x2 != 0) {
+		// 	total = plus(total, x1);
+		// 	x2--;
+		// }
+		// return total;
+		return 0;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		int total = 1;
-		while (n != 0) {
-			total = times(total, x);
-			n--;
-		}
-		return total;
+		// int total = 1;
+		// while (n != 0) {
+		// 	total = times(total, x);
+		// 	n--;
+		// }
+		// return total;
+		return 0;
 	}
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		int count = 0;
-		while (x1 >= x2) {
-			x1 = minus(x1, x2);
-			count++;
-		}
-		return count;
+		// int count = 0;
+		// while (x1 >= x2) {
+		// 	x1 = minus(x1, x2);
+		// 	count++;
+		// }
+		// return count;
+		return 0;
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		while (x1 >= x2) {
-			x1 = minus(x1, x2);
-		}
-		return x1;
+		// while (x1 >= x2) {
+		// 	x1 = minus(x1, x2);
+		// }
+		// return x1;
+		return 0;
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-		int num = 0;
-		while (times(num, num) <= x) {
-			num++;
-		}
-		return minus(num, 1);
+		// int num = 0;
+		// while (times(num, num) <= x) {
+		// 	num++;
+		// }
+		// return minus(num, 1);
+		return 0;
 	}	  	  
 }
