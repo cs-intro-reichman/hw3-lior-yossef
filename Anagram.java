@@ -31,6 +31,14 @@ public class Anagram {
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
 
+		while (str1.indexOf(' ') != -1) {
+			str1 = str1.substring(0, str1.indexOf(' ')) + str1.substring(str1.indexOf(' ') + 1);
+		}
+
+		while (str2.indexOf(' ') != -1) {
+			str2 = str2.substring(0, str2.indexOf(' ')) + str2.substring(str2.indexOf(' ') + 1);
+		}
+
 		if (str1.length() != str2.length()) {
 			return false;
 		}
