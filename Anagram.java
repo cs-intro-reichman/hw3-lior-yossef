@@ -5,7 +5,7 @@ public class Anagram {
 		System.out.println(isAnagram("silent","listen"));  // true
 		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
 		System.out.println(isAnagram("Madam Curie","Radium came")); // true
-		System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldemort")); // true
+		System.out.println(isAnagram("Tom Marvolo Riddle", "I am Lord Voldemort")); // true
 
 		// Tests the preProcess function.
 		System.out.println(preProcess("What? No way!!!"));
@@ -39,10 +39,12 @@ public class Anagram {
 			char letter = str1.charAt(i);
 			int charIndex = str2.indexOf(letter);
 
-			if (charIndex == -1) {
+			if (letter != ' ' && charIndex == -1) {
 				return false;
 			} else {
-				str2 = str2.substring(0, charIndex) + str2.substring(charIndex + 1);
+				if (charIndex != -1) {
+					str2 = str2.substring(0, charIndex) + str2.substring(charIndex + 1);
+				}
 			}
 		}
 
@@ -60,7 +62,7 @@ public class Anagram {
 			if (letter >= 'A' && letter <= 'Z') {
 				letter += 32;
 				newStr += letter;
-			} else if (letter >= 'a' && letter <= 'z') {
+			} else if (letter == ' ' || (letter >= 'a' && letter <= 'z')) {
 				newStr += letter;
 			}
 		}
