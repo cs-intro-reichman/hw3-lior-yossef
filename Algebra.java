@@ -25,13 +25,12 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		// int sum = x1;
-		// while (x2 != 0) {
-		// 	sum++;
-		// 	x2--;
-		// }
-		// return sum;
-		return 0;
+		int sum = x1;
+		while (x2 != 0) {
+			sum++;
+			x2--;
+		}
+		return sum;
 	}
 
 	// Returns x1 - x2
