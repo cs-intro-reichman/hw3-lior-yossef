@@ -76,6 +76,9 @@ public class Algebra {
 		int total = 0;
 		boolean isNegative = (x1 > 0 && x2 < 0) || (x1 < 0 && x2 > 0);
 
+		x1 = (x1 < 0) ? minus(0, x1) : x1;
+		x2 = (x2 < 0) ? minus(0, x2) : x2;
+
 		while (x1 >= x2) {
 			x1 = minus(x1, x2);
 			total++;
