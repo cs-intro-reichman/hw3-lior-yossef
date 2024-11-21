@@ -45,12 +45,13 @@ public class Algebra {
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-        int total = 0;
-		while (x2 != 0) {
-			total = plus(total, x1);
-			x2--;
-		}
-		return total;
+        // int total = 0;
+		// while (x2 != 0) {
+		// 	total = plus(total, x1);
+		// 	x2--;
+		// }
+		// return total;
+		return 0;
 	}
 
 	// Returns x^n (for n >= 0)
