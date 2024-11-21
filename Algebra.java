@@ -73,12 +73,17 @@ public class Algebra {
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		int count = 0;
+		int total = 0;
+		boolean isNegative = (x1 > 0 && x2 < 0) || (x1 < 0 && x2 > 0);
+
 		while (x1 >= x2) {
 			x1 = minus(x1, x2);
-			count++;
+			total++;
 		}
-		return count;
+
+		total = (isNegative) ? minus(0, total) : total;
+
+		return total;
 	}
 
 	// Returns x1 % x2
