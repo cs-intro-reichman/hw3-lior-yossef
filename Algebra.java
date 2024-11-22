@@ -25,43 +25,87 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int sum = x1;
+		while (x2 != 0) {
+			sum++;
+			x2--;
+		}
+		return sum;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int difference = x1;
+		while (x2 != 0) {
+			difference--;
+			x2--;
+		}
+		return difference;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-        // Replace the following statement with your code
-		return 0;
+		int total = 0;
+		boolean isNegative = (x1 > 0 && x2 < 0) || (x1 < 0 && x2 > 0);
+
+		x1 = (x1 < 0) ? minus(0, x1) : x1;
+		x2 = (x2 < 0) ? minus(0, x2) : x2;
+
+		while (x2 != 0) {
+			total = plus(total, x1);
+			x2--;
+		}
+
+		total = (isNegative) ? minus(0, total) : total;
+
+		return total;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
-		return 0;
+		int total = 1;
+		while (n != 0) {
+			total = times(total, x);
+			n--;
+		}
+		return total;
 	}
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-        // Replace the following statement with your code
-		return 0;
+		if (x2 == 0)
+			return -1;
+			
+		int total = 0;
+		boolean isNegative = (x1 > 0 && x2 < 0) || (x1 < 0 && x2 > 0);
+
+		x1 = (x1 < 0) ? minus(0, x1) : x1;
+		x2 = (x2 < 0) ? minus(0, x2) : x2;
+
+		while (x1 >= x2) {
+			x1 = minus(x1, x2);
+			total++;
+		}
+
+		total = (isNegative) ? minus(0, total) : total;
+
+		return total;
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-        // Replace the following statement with your code
-		return 0;
+		while (x1 >= x2) {
+			x1 = minus(x1, x2);
+		}
+		return x1;
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-        // Replace the following statement with your code
-		return 0;
+		int num = 0;
+		while (times(num, num) <= x) {
+			num++;
+		}
+		return minus(num, 1);
 	}	  	  
 }
